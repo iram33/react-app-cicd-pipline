@@ -3,16 +3,17 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 18
+      nodejs: 16
     commands:
-      - npm install
+      - echo Installing dependencies...
+      - npm ci
   build:
     commands:
+      - echo Building React app...
       - npm run build
 artifacts:
   files:
     - '**/*'
-    - appspec.yml
-    - scripts/**/*
   base-directory: build
+
 
